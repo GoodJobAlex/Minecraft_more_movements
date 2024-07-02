@@ -1,4 +1,4 @@
-scoreboard players set raycastcounter pkmoves.global 8
+scoreboard players set raycastcounter pkmoves.global 10
 scoreboard players set walltip pkmoves.global 0
 
 execute at @s anchored eyes positioned ^ ^ ^0.01 run function pkmoves:raycast/raycast_recursive

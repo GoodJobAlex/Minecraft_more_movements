@@ -1,4 +1,7 @@
-execute if block ~ ~-1.5 ~ #pkmoves:not_solid if entity @s[tag=pkmoves.is_in_air] run return fail
+execute if block ~ ~-1.2 ~ #pkmoves:not_solid if entity @s[tag=pkmoves.is_in_air] run return fail
+execute store result score y_facing pkmoves.global run data get entity @s Rotation[1] 100
+execute if score y_facing pkmoves.global matches ..-3000 run return fail
+
 function pkmoves:wall_run/end_wallrun
 scoreboard players set @s pkmoves.sliding_cd 60
 

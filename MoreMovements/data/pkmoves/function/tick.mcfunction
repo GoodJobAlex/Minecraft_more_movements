@@ -19,7 +19,6 @@ execute as @a[tag=!pkmoves.sneaking] if predicate pkmoves:sneaking run tag @s ad
 execute as @a if score @s pkmoves.animation_count_down matches 1 run function pkmoves:animation
 
 #initiate tag
-execute as @a[tag=!pkmoves.vaulting] if score @s pkmoves.vault_cd matches 8 run attribute @s minecraft:generic.step_height modifier remove pkmoves.vault
 execute as @a[tag=!pkmoves.wall_run,tag=pkmoves.is_in_air,tag=pkmoves.sprinting,tag=!pkmoves.wall_run_cool_down] at @s if block ~ ~-1 ~ #pkmoves:not_solid run function pkmoves:wall_run/initiate_wall_run
 execute as @a[tag=!pkmoves.ledging,tag=pkmoves.is_in_air,tag=pkmoves.sneaking] at @s if block ~ ~-1 ~ #pkmoves:not_solid anchored eyes rotated ~ 0 unless block ^ ^ ^1 #pkmoves:not_solid run function pkmoves:ledging/initiate_ledging
 execute as @a[tag=!pkmoves.vaulting,tag=!pkmoves.is_in_air,tag=pkmoves.sprinting,tag=!pkmoves.is_in_air] if score @s pkmoves.vault_cd matches 0 run function pkmoves:vaulting/initiate_vaulting
@@ -36,8 +35,7 @@ execute as @a[tag=pkmoves.wall_run] at @s run function pkmoves:wall_run/apply_wa
 
 
 #
-execute as @a if score @s pkmoves.vault_cd matches 8 run scoreboard players set launch_power motion_library.variables 800
-execute as @a if score @s pkmoves.vault_cd matches 8 at @s rotated ~ -35 run function manipulation:api/launch_facing
+execute as @a if score @s pkmoves.vault_cd matches 8 if score @s pkmoves.sliding_cd matches ..55 run function pkmoves:vaulting/post_vault_apply
 
 execute as @a if score @s pkmoves.animation_count_down matches 1.. run scoreboard players remove @s pkmoves.animation_count_down 1
 execute as @a if score @s pkmoves.vault_cd matches 1.. run scoreboard players remove @s pkmoves.vault_cd 1
@@ -45,3 +43,6 @@ scoreboard players set @a pkmoves.move 0
 
 execute as @a if score @s pkmoves.sliding_cd matches 1.. run scoreboard players remove @s pkmoves.sliding_cd 1
 
+#test
+execute as @a run attribute @s generic.scale modifier remove taggame.shrink
+execute as @a if items entity @s weapon.mainhand spyglass run attribute @s generic.scale modifier add taggame.shrink -0.5 add_value

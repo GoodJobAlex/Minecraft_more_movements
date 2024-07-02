@@ -1,5 +1,5 @@
 tag @s add pkmoves.ledging
-execute if score vmt pkmoves.global matches ..-60 run tp @s @s
+execute if score vmt pkmoves.global matches ..-30 run tp @s @s
 
 
 execute if score @s pkmoves.sliding_cd matches ..15 run scoreboard players set @s pkmoves.sliding_cd 15
