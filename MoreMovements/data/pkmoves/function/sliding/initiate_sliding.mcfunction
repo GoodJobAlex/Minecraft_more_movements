@@ -6,12 +6,9 @@ function pkmoves:wall_run/end_wallrun
 scoreboard players set @s pkmoves.sliding_cd 60
 
 execute rotated ~ 0 anchored eyes positioned ^ ^ ^ run summon item_display ~ ~ ~ {Tags:["pkmoves.init","pkmoves.slide_hitbox"],Passengers:[{id:"minecraft:shulker",NoGravity:1b,Silent:1b,Invulnerable:1b,DeathLootTable:"asdasd",NoAI:1b,AttachFace:1b,Color:14b}]}
-scoreboard players operation @n[tag=pkmoves.init,type=item_display] pkmoves.id = @s pkmoves.id
-tag @n[tag=pkmoves.init,type=item_display] remove pkmoves.init
-
 execute rotated ~ 0 anchored eyes positioned ^ ^ ^1 run summon item_display ~ ~ ~ {Tags:["pkmoves.init","pkmoves.slide_hitbox"],Passengers:[{id:"minecraft:shulker",NoGravity:1b,Silent:1b,Invulnerable:1b,DeathLootTable:"asdasd",NoAI:1b,AttachFace:1b,Color:14b}]}
-scoreboard players operation @n[tag=pkmoves.init,type=item_display] pkmoves.id = @s pkmoves.id
-tag @n[tag=pkmoves.init,type=item_display] remove pkmoves.init
+scoreboard players operation @e[tag=pkmoves.init,type=item_display] pkmoves.id = @s pkmoves.id
+tag @e[tag=pkmoves.init,type=item_display] remove pkmoves.init
 
 
 attribute @s minecraft:generic.safe_fall_distance modifier add pkmoves.slide_protection 100 add_value

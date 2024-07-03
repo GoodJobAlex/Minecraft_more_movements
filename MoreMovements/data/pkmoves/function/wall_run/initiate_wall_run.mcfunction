@@ -6,6 +6,7 @@ summon item_display ~ ~-1.3 ~ {interpolation_duration:0,teleport_duration:0,Tags
 execute positioned ~ ~-1.3 ~ run scoreboard players operation @n[tag=pkmoves.platform,type=item_display] pkmoves.id = @s pkmoves.id
 tag @s remove pkmoves.screen_tilt_applied
 
+
 attribute @s minecraft:generic.attack_speed modifier add pkmoves.animation -1 add_multiplied_total
 scoreboard players set @s pkmoves.animation_count_down 7
 

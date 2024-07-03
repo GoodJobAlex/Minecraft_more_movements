@@ -1,6 +1,6 @@
 
 scoreboard objectives add pkmoves.sliding_cd dummy
-
+scoreboard objectives add pkmoves.jump minecraft.custom:minecraft.jump
 scoreboard objectives add pkmoves.id dummy
 scoreboard objectives add pkmoves.animation_count_down dummy
 scoreboard objectives add pkmoves.global dummy

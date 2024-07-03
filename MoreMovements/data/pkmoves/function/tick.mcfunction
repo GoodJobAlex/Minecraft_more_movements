@@ -14,34 +14,36 @@ execute as @a[tag=!pkmoves.sprinting] if predicate pkmoves:sprinting run tag @s 
 execute as @a[tag=pkmoves.sprinting] unless predicate pkmoves:sprinting run tag @s remove pkmoves.sprinting
 execute as @a[tag=pkmoves.sneaking] unless predicate pkmoves:sneaking run tag @s remove pkmoves.sneaking
 execute as @a[tag=!pkmoves.sneaking] if predicate pkmoves:sneaking run tag @s add pkmoves.sneaking
+execute as @a if score @s pkmoves.jump matches 1.. run tag @s add pkmoves.jumped
+execute as @a if score @s pkmoves.jump matches 1.. run scoreboard players set @s pkmoves.jump 0
 
 
 execute as @a if score @s pkmoves.animation_count_down matches 1 run function pkmoves:animation
 
 #initiate tag
-execute as @a[tag=!pkmoves.wall_run,tag=pkmoves.is_in_air,tag=pkmoves.sprinting,tag=!pkmoves.wall_run_cool_down] at @s if block ~ ~-1 ~ #pkmoves:not_solid run function pkmoves:wall_run/initiate_wall_run
+execute as @a[tag=!pkmoves.wall_run,tag=pkmoves.is_in_air,tag=pkmoves.sprinting,tag=!pkmoves.wall_run_cool_down,tag=pkmoves.jumped] at @s if block ~ ~-1.1 ~ #pkmoves:not_solid run function pkmoves:wall_run/initiate_wall_run
 execute as @a[tag=!pkmoves.ledging,tag=pkmoves.is_in_air,tag=pkmoves.sneaking] at @s if block ~ ~-1 ~ #pkmoves:not_solid anchored eyes rotated ~ 0 unless block ^ ^ ^1 #pkmoves:not_solid run function pkmoves:ledging/initiate_ledging
 execute as @a[tag=!pkmoves.vaulting,tag=!pkmoves.is_in_air,tag=pkmoves.sprinting,tag=!pkmoves.is_in_air] if score @s pkmoves.vault_cd matches 0 run function pkmoves:vaulting/initiate_vaulting
 
 
 #apply effect
-
+execute as @a[tag=pkmoves.wall_run] at @s run function pkmoves:wall_run/apply_wall_run
 execute as @a[tag=pkmoves.ledging] at @s if block ~ ~-1 ~ #pkmoves:not_solid run function pkmoves:ledging/apply_ledging
-
 execute as @a[tag=!pkmoves.ledged,tag=pkmoves.sneaking,tag=!pkmoves.wall_run] at @s if block ~ ~-1 ~ #pkmoves:not_solid run function pkmoves:ledging/initiate_ledge_up
 execute as @a[tag=pkmoves.vaulting] run function pkmoves:vaulting/apply_vaulting
 
-execute as @a[tag=pkmoves.wall_run] at @s run function pkmoves:wall_run/apply_wall_run
-
 
 #
-execute as @a if score @s pkmoves.vault_cd matches 8 if score @s pkmoves.sliding_cd matches ..55 run function pkmoves:vaulting/post_vault_apply
+execute as @a if score @s pkmoves.vault_cd matches 3 if score @s pkmoves.sliding_cd matches ..55 run function pkmoves:vaulting/post_vault_apply
 
 execute as @a if score @s pkmoves.animation_count_down matches 1.. run scoreboard players remove @s pkmoves.animation_count_down 1
 execute as @a if score @s pkmoves.vault_cd matches 1.. run scoreboard players remove @s pkmoves.vault_cd 1
 scoreboard players set @a pkmoves.move 0
 
 execute as @a if score @s pkmoves.sliding_cd matches 1.. run scoreboard players remove @s pkmoves.sliding_cd 1
+
+execute as @a[tag=!pkmoves.is_in_air] at @s run particle minecraft:entity_effect{color:[0.9960784313725490196078431372549,0.9921568627450980392156862745098,1.7568627461,1.0]} ~ ~ ~ 0 0 0 1 0 force @s
+
 
 #test
 execute as @a run attribute @s generic.scale modifier remove taggame.shrink

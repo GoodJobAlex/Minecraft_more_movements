@@ -1,2 +1,2 @@
 tag @s add pkmoves.vaulting
-scoreboard players set @s pkmoves.vault_cd 10
+scoreboard players set @s pkmoves.vault_cd 5
