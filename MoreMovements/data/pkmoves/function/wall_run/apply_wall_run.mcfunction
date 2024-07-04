@@ -20,4 +20,5 @@ execute at @s run function pkmoves:wall_run/adjust_facing
 execute if score @s pkmoves.wall_run_counter matches 70 run attribute @s minecraft:generic.gravity modifier add pkmoves.wall_run -0.6 add_multiplied_total
 scoreboard players remove @s pkmoves.wall_run_counter 1
 
+scoreboard players set @s pkmoves.wall_run_count_down 15
 execute if score @s pkmoves.sliding_cd matches ..1 run scoreboard players set @s pkmoves.sliding_cd 2

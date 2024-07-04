@@ -14,14 +14,15 @@ execute as @a[tag=!pkmoves.sprinting] if predicate pkmoves:sprinting run tag @s 
 execute as @a[tag=pkmoves.sprinting] unless predicate pkmoves:sprinting run tag @s remove pkmoves.sprinting
 execute as @a[tag=pkmoves.sneaking] unless predicate pkmoves:sneaking run tag @s remove pkmoves.sneaking
 execute as @a[tag=!pkmoves.sneaking] if predicate pkmoves:sneaking run tag @s add pkmoves.sneaking
-execute as @a if score @s pkmoves.jump matches 1.. run tag @s add pkmoves.jumped
+execute as @a[tag=!pkmoves.wall_run] if score @s pkmoves.jump matches 1.. run scoreboard players set @s pkmoves.wall_run_count_down 10
 execute as @a if score @s pkmoves.jump matches 1.. run scoreboard players set @s pkmoves.jump 0
+execute as @a if score @s pkmoves.wall_run_count_down matches 1.. run scoreboard players remove @s pkmoves.wall_run_count_down 1
 
 
 execute as @a if score @s pkmoves.animation_count_down matches 1 run function pkmoves:animation
 
 #initiate tag
-execute as @a[tag=!pkmoves.wall_run,tag=pkmoves.is_in_air,tag=pkmoves.sprinting,tag=!pkmoves.wall_run_cool_down,tag=pkmoves.jumped] at @s if block ~ ~-1.1 ~ #pkmoves:not_solid run function pkmoves:wall_run/initiate_wall_run
+execute as @a[tag=!pkmoves.wall_run,tag=pkmoves.is_in_air,tag=pkmoves.sprinting,tag=!pkmoves.wall_run_cool_down] if score @s pkmoves.wall_run_count_down matches 1.. at @s if block ~ ~-1.1 ~ #pkmoves:not_solid run function pkmoves:wall_run/initiate_wall_run
 execute as @a[tag=!pkmoves.ledging,tag=pkmoves.is_in_air,tag=pkmoves.sneaking] at @s if block ~ ~-1 ~ #pkmoves:not_solid anchored eyes rotated ~ 0 unless block ^ ^ ^1 #pkmoves:not_solid run function pkmoves:ledging/initiate_ledging
 execute as @a[tag=!pkmoves.vaulting,tag=!pkmoves.is_in_air,tag=pkmoves.sprinting,tag=!pkmoves.is_in_air] if score @s pkmoves.vault_cd matches 0 run function pkmoves:vaulting/initiate_vaulting
 
