@@ -17,7 +17,7 @@ execute at @s run function pkmoves:wall_run/adjust_facing
 #scoreboard players set y_motion motion_library.variables -37
 #function manipulation:api/set_player_motion
 
-execute if score @s pkmoves.wall_run_counter matches 70 run attribute @s minecraft:generic.gravity modifier add pkmoves.wall_run -0.6 add_multiplied_total
+execute if score @s pkmoves.wall_run_counter matches 70 run attribute @s minecraft:generic.gravity modifier add pkmoves.wall_run -0.3 add_multiplied_total
 scoreboard players remove @s pkmoves.wall_run_counter 1
 
 scoreboard players set @s pkmoves.wall_run_count_down 15
