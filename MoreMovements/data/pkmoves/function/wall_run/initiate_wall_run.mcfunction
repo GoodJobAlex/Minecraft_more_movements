@@ -7,7 +7,6 @@ execute positioned ~ ~-1.3 ~ run scoreboard players operation @n[tag=pkmoves.pla
 tag @s remove pkmoves.screen_tilt_applied
 
 
-attribute @s minecraft:generic.attack_speed modifier add pkmoves.animation -1 add_multiplied_total
-scoreboard players set @s pkmoves.animation_count_down 7
+
 
 attribute @s minecraft:generic.movement_speed modifier add pkmoves.wall_run_boost 0.08 add_value

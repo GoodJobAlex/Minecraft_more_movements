@@ -1,8 +1,8 @@
 tp @s @s
 function pkmoves:ledging/end_ledging
 execute store result score launch_power motion_library.variables run data get entity @s Rotation[1] -50
-execute if score launch_power motion_library.variables matches ..1100 run scoreboard players set launch_power motion_library.variables 1200
-execute if score launch_power motion_library.variables matches 1500.. run scoreboard players set launch_power motion_library.variables 1800
+execute if score launch_power motion_library.variables matches ..1100 run scoreboard players set launch_power motion_library.variables 1100
+execute if score launch_power motion_library.variables matches 1500.. run scoreboard players set launch_power motion_library.variables 1500
 
 
 tag @s add pkmoves.ledged
