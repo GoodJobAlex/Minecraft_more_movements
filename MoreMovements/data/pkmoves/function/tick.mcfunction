@@ -20,6 +20,8 @@ execute as @a[tag=!pkmoves.sneaking] if predicate pkmoves:sneaking run tag @s ad
 execute as @a[tag=!pkmoves.wall_run] if score @s pkmoves.jump matches 1.. run scoreboard players set @s pkmoves.wall_run_count_down 10
 execute as @a if score @s pkmoves.jump matches 1.. run scoreboard players set @s pkmoves.jump 0
 execute as @a if score @s pkmoves.wall_run_count_down matches 1.. run scoreboard players remove @s pkmoves.wall_run_count_down 1
+execute as @a[tag=pkmoves.sprinting] run attribute @s generic.step_height modifier add pkmoves.vault 0.6 add_value
+execute as @a[tag=!pkmoves.sprinting] run attribute @s generic.step_height modifier remove pkmoves.vault
 
 
 execute as @a if score @s pkmoves.animation_count_down matches 1 run function pkmoves:animation
