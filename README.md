@@ -6,7 +6,7 @@ https://github.com/GoodJobAlex/minecraft_player_motion_manipulator.git
 # Feature Description:  
 **Wall run**-> jump while there is at least one wall on the side of you, or jump into a wall and be given 0.5 seconds of wall run. You can jump off of a wall and start another wall run, while your verticle motion is above -0.7 (changeable in the raycast/wallrun_test file)    
 **Wall jump**-> jump while wall run. (you are able to jump back and forth between walls).   
-**Vaulting**-> sprint toward an obstacle of 1 block high and vault over it automatically. But be aware you won't be able to go up stairs like this, and different reactions have been implemented for long obstacle and one block obstacles (changeable by deleting line).   
+**Vaulting**-> sprint toward an obstacle of 1 block high and vault over it automatically. But be aware you won't be able to go up stairs like this, becuase that would be too broken.
 **Climb up chains and end rods**   
 **Ledge grab**-> when the player is not on the ground the are able to ledge grab once by sneaking while looking at a block with no blocks on top of it.    
 **Slide down walls**-> while falling you can look toward a wall and sneaking to slide down a wall.    
