@@ -4,7 +4,6 @@ execute store result score launch_power motion_library.variables run data get en
 execute if score launch_power motion_library.variables matches ..1100 run scoreboard players set launch_power motion_library.variables 1100
 execute if score launch_power motion_library.variables matches 1500.. run scoreboard players set launch_power motion_library.variables 1500
 
-
 tag @s add pkmoves.ledged
 
 attribute @s minecraft:generic.attack_speed modifier add pkmoves.animation -1 add_multiplied_total

@@ -5,4 +5,3 @@ attribute @s minecraft:generic.gravity modifier remove pkmoves.wall_run
 scoreboard players set terminate_wallrun pkmoves.global 1
 tag @s remove pkmoves.wall_run
 
-execute if score @s pkmoves.sliding_cd matches ..15 run scoreboard players set @s pkmoves.sliding_cd 15
