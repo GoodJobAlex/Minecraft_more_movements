@@ -10,7 +10,8 @@ attribute @s minecraft:generic.attack_speed modifier add pkmoves.animation -1 ad
 scoreboard players set @s pkmoves.animation_count_down 7
 
 
-execute if score @s pkmoves.sliding_cd matches ..15 run scoreboard players set @s pkmoves.sliding_cd 15
+execute if score @s pkmoves.sliding_cd matches ..10 run scoreboard players set @s pkmoves.sliding_cd 10
+playsound minecraft:block.powder_snow.break player @s ~ ~ ~ 1 0.7 1
 
 execute at @s rotated 0 -90 run function manipulation:api/launch_facing
-
+scoreboard players set @s pkmoves.sprint_time 0

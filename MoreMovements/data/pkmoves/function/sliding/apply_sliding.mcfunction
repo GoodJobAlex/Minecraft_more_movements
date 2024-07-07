@@ -5,7 +5,9 @@ execute if entity @s[tag=pkmoves.is_in_air] run scoreboard players set launch_po
 execute if entity @s[tag=!pkmoves.is_in_air] run scoreboard players set launch_power motion_library.variables 2800
 
 execute at @s rotated ~ 0 run function manipulation:api/launch_facing
+ scoreboard players set launch_power motion_library.variables 800
+execute at @s rotated ~ 90 run function manipulation:api/launch_facing
 
 
 tag @s remove pkmoves.init_slide
-execute at @s run playsound minecraft:block.sand.place player @s ~ ~ ~ 1 0.64
+execute at @s run playsound minecraft:block.sand.break player @s ~ ~ ~ 1 0.44
