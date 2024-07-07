@@ -10,8 +10,8 @@ https://github.com/GoodJobAlex/minecraft_player_motion_manipulator.git
 **Climb up chains and end rods**   
 **Ledge grab**-> when the player is not on the ground the are able to ledge grab once by sneaking while looking at a block with no blocks on top of it.    
 **Slide down walls**-> while falling you can look toward a wall and sneaking to slide down a wall.    
-**Spring board jump**-> while vaulting up a one block long obstacle press jump at the right moment will give you a much larger jump.    
-**Sliding**-> sneaking while sprinting. (if you want to jump you need to sneak quickly, before the player reaches jump height above 1.2 blocks).  
+**Spring board jump**-> while vaulting up obstacle press jump at the right moment will give you a much larger jump.    
+**Sliding**-> sneaking while sprinting for 1.15 seconds. (if you want to jump you need to sneak quickly, before the player reaches jump height above 1.2 blocks).  
 
 
 
