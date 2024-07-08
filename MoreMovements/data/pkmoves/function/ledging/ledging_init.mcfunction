@@ -1,4 +1,5 @@
 tag @s add pkmoves.ledging
+execute store result score vmt pkmoves.global run data get entity @s Motion[1] 100
 execute if score vmt pkmoves.global matches ..-30 run tp @s @s
 
 
