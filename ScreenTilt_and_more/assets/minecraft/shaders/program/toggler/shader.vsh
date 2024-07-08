@@ -24,7 +24,7 @@ void main(){
 
     gl_Position = vec4(x, y, 0.2, 1.0);
     vec2 uv = Position.xy / OutSize;
-    float RotDeg = 0.1745329252;
+    float RotDeg = 0.1134464014;
     float resx ;
     float resy ;
     // Channel #1
