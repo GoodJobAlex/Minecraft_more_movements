@@ -1,4 +1,4 @@
-execute if function pkmoves:raycast/wallrun_test positioned ~ ~1 ~ run tag @s add pkmoves.wall_run
+execute if function pkmoves:raycast/wallrun_test run tag @s add pkmoves.wall_run
 execute unless entity @s[tag=pkmoves.wall_run] run return 0
 scoreboard players set @s pkmoves.wall_run_counter 80
 

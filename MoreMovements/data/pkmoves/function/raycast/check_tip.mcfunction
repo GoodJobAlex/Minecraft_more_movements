@@ -1,0 +1,2 @@
+execute unless block ~ ~ ~ #pkmoves:not_grabable if block ~ ~1.3 ~ #pkmoves:not_solid run scoreboard players set walltip pkmoves.global 1
+execute unless block ~ ~ ~ #pkmoves:not_grabable if block ~ ~0.7 ~ #pkmoves:not_solid run scoreboard players set walltip pkmoves.global 1

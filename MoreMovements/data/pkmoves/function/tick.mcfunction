@@ -1,3 +1,4 @@
+
 execute as @a[tag=!pkmoves.ledged,tag=pkmoves.sneaking,tag=!pkmoves.wall_run] at @s if block ~ ~-1 ~ #pkmoves:not_solid run function pkmoves:ledging/initiate_ledge_up
 execute as @a[tag=pkmoves.is_in_air] unless predicate pkmoves:in_air run function pkmoves:remove_tags
 #kill wall run platforms
@@ -11,17 +12,13 @@ execute as @a if score @s pkmoves.sliding_cd matches 54 run attribute @s generic
 
 
 execute as @a[tag=pkmoves.init_slide] run function pkmoves:sliding/apply_sliding
-execute as @a[tag=pkmoves.sprinting,tag=!pkmoves.ledging,tag=!pkmoves.sneaking] if score @s pkmoves.sliding_cd matches 0 if score @s pkmoves.sprint_time matches 22.. if predicate pkmoves:sneaking at @s run function pkmoves:sliding/initiate_sliding
-execute as @a if score @s pkmoves.sprint_time matches 23.. at @s run particle cloud ~ ~ ~ 0 0 0 0.1 1 normal @s
+execute as @a[tag=pkmoves.sprinting,tag=!pkmoves.ledging,tag=!pkmoves.sneaking] if score @s pkmoves.sliding_cd matches 0 if predicate pkmoves:sneaking at @s run function pkmoves:sliding/initiate_sliding
+
 #init tags
 execute as @a[tag=!pkmoves.is_in_air] if predicate pkmoves:in_air run tag @s add pkmoves.is_in_air
 execute as @a[tag=pkmoves.is_in_air] unless predicate pkmoves:in_air run tag @s remove pkmoves.is_in_air
 execute as @a[tag=!pkmoves.sprinting] if predicate pkmoves:sprinting run tag @s add pkmoves.sprinting
-execute as @a[tag=!pkmoves.sprinting] run scoreboard players set @s pkmoves.sprint_time 0
 execute as @a[tag=pkmoves.sprinting] unless predicate pkmoves:sprinting run tag @s remove pkmoves.sprinting
-
-execute as @a[tag=pkmoves.sprinting] run scoreboard players add @s pkmoves.sprint_time 1
-execute as @a[tag=pkmoves.sprinting,tag=!pkmoves.is_in_air] run scoreboard players add @s pkmoves.sprint_time 2
 execute as @a[tag=pkmoves.sneaking] unless predicate pkmoves:sneaking run tag @s remove pkmoves.sneaking
 execute as @a[tag=!pkmoves.sneaking] if predicate pkmoves:sneaking run tag @s add pkmoves.sneaking
 execute as @a[tag=!pkmoves.sneaking] if predicate pkmoves:sneaking run tag @s remove pkmoves.sprinting

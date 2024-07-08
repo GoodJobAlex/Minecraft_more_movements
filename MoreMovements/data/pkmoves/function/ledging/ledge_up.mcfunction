@@ -14,4 +14,3 @@ execute if score @s pkmoves.sliding_cd matches ..10 run scoreboard players set @
 playsound minecraft:block.powder_snow.break player @s ~ ~ ~ 1 0.7 1
 
 execute at @s rotated 0 -90 run function manipulation:api/launch_facing
-scoreboard players set @s pkmoves.sprint_time 0
