@@ -9,4 +9,5 @@ scoreboard objectives add pkmoves.move minecraft.custom:minecraft.walk_one_cm
 scoreboard objectives add pkmoves.wall_run_counter dummy
 scoreboard objectives add pkmoves.vault_cd dummy
 scoreboard players set launch_strength motion_library.variables 5
+scoreboard players set sound_freq pkmoves.global 4
 say hi

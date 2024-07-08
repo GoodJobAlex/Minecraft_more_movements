@@ -3,9 +3,9 @@ attribute @s minecraft:generic.safe_fall_distance modifier remove pkmoves.slide_
 
 execute if entity @s[tag=pkmoves.is_in_air] run scoreboard players set launch_power motion_library.variables 2100
 execute if entity @s[tag=!pkmoves.is_in_air] run scoreboard players set launch_power motion_library.variables 2800
-
+execute at @s run particle minecraft:entity_effect{color:[0.9960784313725490196078431372549,0.9921568627450980392156862745098,1.7568627461,1.0]} ~ ~ ~ 0 0 0 1 0 force @s
 execute at @s rotated ~ 0 run function manipulation:api/launch_facing
- scoreboard players set launch_power motion_library.variables 800
+scoreboard players set launch_power motion_library.variables 800
 execute at @s rotated ~ 90 run function manipulation:api/launch_facing
 
 
