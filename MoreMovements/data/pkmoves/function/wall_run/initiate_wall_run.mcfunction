@@ -11,4 +11,3 @@ tag @s remove pkmoves.screen_tilt_applied
 
 
 
-attribute @s minecraft:generic.movement_speed modifier add pkmoves.wall_run_boost 0.08 add_value
