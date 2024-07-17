@@ -1,7 +1,7 @@
 # Minecraft_more_movements-Version 1.21
 A parkour datapack which gives you more movements to enhance your game play. It even works when your scale is changed. Be careful, the screen tilt effect requires you to be in fabulous mode. Best setting: Fov: 90, Fov_effects: 75.    
 # dependencies:    
-https://github.com/GoodJobAlex/Minecraft_Easy_boss_bar_cool_down.git    
+https://github.com/GoodJobAlex/Minecraft_Easy_boss_bar_cool_down.git   **-Not Needed for Version 2**   
 https://github.com/GoodJobAlex/minecraft_player_motion_manipulator.git    
 # Feature Description:  
 **Wall run**-> jump while there is at least one wall on the side of you, or jump into a wall and be given 0.5 seconds of wall run. You can jump off of a wall and start another wall run, while your verticle motion is above -0.7 (changeable in the raycast/wallrun_test file)    
