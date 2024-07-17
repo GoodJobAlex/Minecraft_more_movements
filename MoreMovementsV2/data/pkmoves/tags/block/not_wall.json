@@ -1,0 +1,6 @@
+{
+    "values":[
+        "minecraft:air",
+        "#pkmoves:not_solid"
+      ]      
+}
