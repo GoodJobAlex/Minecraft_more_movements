@@ -1,8 +1,8 @@
-scoreboard players remove @s pkmoves.stamina 300
-execute if entity @s[tag=pkmoves.is_in_air] if block ~ ~-1.5 ~ #pkmoves:not_solid run return fail
+execute if entity @s[tag=pkmoves.is_in_air] at @s anchored eyes unless block ^ ^ ^1.3 #pkmoves:not_solid run return fail
+execute if entity @s[tag=pkmoves.is_in_air] at @s if block ~ ~-1.5 ~ #pkmoves:not_solid run return fail
 function pkmoves:wall_run/end_wallrun
 scoreboard players set @s pkmoves.sliding_cd 40
-
+scoreboard players remove @s pkmoves.stamina 300
 execute rotated ~ 0 anchored eyes run function pkmoves:sliding/summon_platform
 scoreboard players operation @e[tag=pkmoves.init,type=item_display] pkmoves.id = @s pkmoves.id
 tag @e[tag=pkmoves.init,type=item_display] remove pkmoves.init

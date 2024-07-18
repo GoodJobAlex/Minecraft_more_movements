@@ -12,6 +12,12 @@ execute if entity @s[tag=!pkmoves.is_in_air] run function pkmoves:wall_run/end_w
 execute unless block ~ ~-0.3 ~ #pkmoves:not_solid run function pkmoves:wall_run/end_wallrun
 execute if score terminate_wallrun pkmoves.global matches 1 run return fail
 
+execute store result score vmt pkmoves.global run data get entity @s Motion[1] 100
+execute if score vmt pkmoves.global matches ..-50 run scoreboard players set launch_power motion_library.variables 200
+execute if score vmt pkmoves.global matches ..-50 at @s rotated 0 -70 run function manipulation:api/launch_facing
+
+execute if score vmt pkmoves.global matches ..-50 run return 0
+
 scoreboard players remove @s pkmoves.stamina 5
 
 execute if score @s pkmoves.wall_run_counter matches 72 run attribute @s minecraft:generic.gravity modifier add pkmoves.wall_run -0.3 add_multiplied_total

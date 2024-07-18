@@ -1,4 +1,6 @@
 execute if function pkmoves:raycast/wallrun_test run tag @s add pkmoves.wall_run
+execute if score vmt pkmoves.global matches ..-50 run scoreboard players set launch_power motion_library.variables 450
+execute if score vmt pkmoves.global matches ..-50 at @s rotated 0 -90 run function manipulation:api/launch_facing
 execute unless entity @s[tag=pkmoves.wall_run] run return 0
 scoreboard players set @s pkmoves.wall_run_counter 80
 
@@ -7,7 +9,7 @@ summon item_display ~ ~-1.6 ~ {interpolation_duration:0,teleport_duration:0,Tags
 execute positioned ~ ~-1.6 ~ run scoreboard players operation @n[tag=pkmoves.platform,type=item_display] pkmoves.id = @s pkmoves.id
 
 tag @s remove pkmoves.screen_tilt_applied
-
+execute run function pkmoves:wall_run/adjust_facing
 
 
 

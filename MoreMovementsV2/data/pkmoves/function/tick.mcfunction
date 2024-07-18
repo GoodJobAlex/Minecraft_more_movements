@@ -18,8 +18,8 @@ execute as @a[tag=pkmoves.sprinting,tag=!pkmoves.ledging,tag=!pkmoves.sneaking,t
 execute as @a[tag=pkmoves.sneaking,tag=!pkmoves.wall_run,tag=!pkmoves.fatigue] if score @s pkmoves.ledge_grab_cd matches 0 at @s if block ~ ~-1 ~ #pkmoves:not_solid run function pkmoves:ledging/initiate_ledge_up
 
 #vaulting attributes
-execute as @a[tag=pkmoves.sprinting,tag=!fatigue] run attribute @s generic.step_height modifier add pkmoves.vault 0.6 add_value
-execute as @a[tag=!pkmoves.sprinting,tag=!pkmoves.fatigue] run attribute @s generic.step_height modifier remove pkmoves.vault
+execute as @a[tag=pkmoves.sprinting,tag=!fatigue,tag=!pkmoves.vault_attributes_applied] run function pkmoves:applyvaultattributes
+execute as @a[tag=!pkmoves.sprinting,tag=pkmoves.vault_attributes_applied] run function pkmoves:removevaultattributes
 
 
 
