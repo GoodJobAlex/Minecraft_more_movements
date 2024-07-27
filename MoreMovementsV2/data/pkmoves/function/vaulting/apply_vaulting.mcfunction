@@ -1,4 +1,4 @@
-scoreboard players remove @s pkmoves.stamina 100
+scoreboard players remove @s pkmoves.stamina 50
 execute if entity @s[tag=pkmoves.is_in_air] run return fail
 tag @s remove pkmoves.vaulting
 execute if score @s pkmoves.sliding_cd matches 35.. run return fail

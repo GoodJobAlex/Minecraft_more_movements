@@ -1,5 +1,6 @@
 {
     "values" : [
-        "pkmoves:load"
+        "pkmoves:load",
+        "manipulation:load"
     ]
 }

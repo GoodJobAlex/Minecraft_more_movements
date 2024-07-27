@@ -7,9 +7,12 @@ execute as @a[tag=pkmoves.is_in_air] unless predicate pkmoves:in_air run functio
 
 #kill wall run platforms
 execute as @a if score @s pkmoves.sliding_cd matches 33 at @s as @e[tag=pkmoves.slide_hitbox,type=item_display] if score @s pkmoves.id = @p pkmoves.id run function pkmoves:sliding/remove_shulker
-execute as @a if score @s pkmoves.sliding_cd matches 34.. if score @s pkmoves.jump matches 1.. at @s as @e[tag=pkmoves.slide_hitbox,type=item_display] if score @s pkmoves.id = @p pkmoves.id run function pkmoves:sliding/remove_shulker
+execute as @a if score @s pkmoves.sliding_cd matches 37.. if score @s pkmoves.jump matches 1.. at @s as @e[tag=pkmoves.slide_hitbox,type=item_display] if score @s pkmoves.id = @p pkmoves.id run function pkmoves:sliding/remove_shulker
+execute as @a if score @s pkmoves.sliding_cd matches 37.. if score @s pkmoves.jump matches 1.. run scoreboard players set launch_power motion_library.variables 700
+execute as @a if score @s pkmoves.sliding_cd matches 37.. if score @s pkmoves.jump matches 1.. at @s rotated ~ 0 run function manipulation:api/launch_facing
+
 execute as @a if score @s pkmoves.sliding_cd matches 32 run attribute @s generic.step_height modifier remove pkmoves.sliding
-execute as @a if score @s pkmoves.sliding_cd matches 35 run attribute @s generic.movement_speed modifier remove pkmoves.slide
+execute as @a if score @s pkmoves.sliding_cd matches 36 run attribute @s generic.movement_speed modifier remove pkmoves.slide
 execute as @a if score @s pkmoves.sliding_cd matches 32 run attribute @s generic.jump_strength modifier remove pkmoves.slide
 execute as @a if score @s pkmoves.sliding_cd matches 35 run attribute @s generic.step_height modifier remove pkmoves.slide
 
@@ -18,7 +21,7 @@ execute as @a[tag=pkmoves.sprinting,tag=!pkmoves.ledging,tag=!pkmoves.sneaking,t
 execute as @a[tag=pkmoves.sneaking,tag=!pkmoves.wall_run,tag=!pkmoves.fatigue] if score @s pkmoves.ledge_grab_cd matches 0 at @s if block ~ ~-1 ~ #pkmoves:not_solid run function pkmoves:ledging/initiate_ledge_up
 
 #vaulting attributes
-execute as @a[tag=pkmoves.sprinting,tag=!fatigue,tag=!pkmoves.vault_attributes_applied] run function pkmoves:applyvaultattributes
+execute as @a[tag=pkmoves.sprinting,tag=!pkmoves.fatigue,tag=!pkmoves.vault_attributes_applied] run function pkmoves:applyvaultattributes
 execute as @a[tag=!pkmoves.sprinting,tag=pkmoves.vault_attributes_applied] run function pkmoves:removevaultattributes
 
 
@@ -49,7 +52,7 @@ execute as @a if score @s pkmoves.animation_count_down matches 1.. run scoreboar
 
 #initiate tag
 execute as @a[tag=!pkmoves.ledging,tag=pkmoves.is_in_air,tag=pkmoves.sneaking,tag=!pkmoves.ledged,tag=!pkmoves.fatigue] at @s if block ~ ~-1 ~ #pkmoves:not_solid anchored eyes rotated ~ 0 unless block ^ ^ ^1 #pkmoves:not_solid run function pkmoves:ledging/initiate_ledging
-execute as @a[tag=!pkmoves.wall_run,tag=pkmoves.is_in_air,tag=pkmoves.sprinting,tag=!pkmoves.wall_run_cool_down,tag=!pkmoves.ledging,tag=!pkmoves.sneaking,tag=!pkmoves.fatigue] if score @s pkmoves.wall_run_count_down matches 1.. at @s if block ~ ~-1.1 ~ #pkmoves:not_solid run function pkmoves:wall_run/initiate_wall_run
+execute as @a[tag=!pkmoves.wall_run,tag=pkmoves.is_in_air,tag=pkmoves.sprinting,tag=!pkmoves.wall_run_cool_down,tag=!pkmoves.ledging,tag=!pkmoves.sneaking,tag=!pkmoves.fatigue] if score @s pkmoves.wall_run_count_down matches 1.. at @s if block ~ ~-1.1 ~ #pkmoves:not_solid if block ~ ~-0.1 ~ #pkmoves:not_solid run function pkmoves:wall_run/initiate_wall_run
 execute as @a[tag=!pkmoves.vaulting,tag=!pkmoves.is_in_air,tag=pkmoves.sprinting,tag=!pkmoves.fatigue] if score @s pkmoves.vault_cd matches 0 run function pkmoves:vaulting/initiate_vaulting
 
 #apply effect

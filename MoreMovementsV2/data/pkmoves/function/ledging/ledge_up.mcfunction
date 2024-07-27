@@ -1,6 +1,6 @@
 
 function pkmoves:ledging/end_ledging
-scoreboard players remove @s pkmoves.stamina 250
+scoreboard players remove @s pkmoves.stamina 150
 scoreboard players set @s pkmoves.ledge_grab_cd 8
 
 
