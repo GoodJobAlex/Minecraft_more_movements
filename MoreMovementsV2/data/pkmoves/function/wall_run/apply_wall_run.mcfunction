@@ -1,16 +1,16 @@
 
 #termination keys
-scoreboard players set terminate_wallrun pkmoves.global 0
-execute unless function pkmoves:raycast/walls_around run function pkmoves:wall_run/end_wallrun
-execute if score @s pkmoves.wall_run_counter matches ..72 if score @s pkmoves.move matches ..5 if entity @s[tag=!pkmoves.sprinting] run function pkmoves:wall_run/end_wallrun
-execute if score @s pkmoves.wall_run_counter matches 0 run function pkmoves:wall_run/end_wallrun
+
+execute unless function pkmoves:raycast/walls_around run return run function pkmoves:wall_run/end_wallrun
+execute if score @s pkmoves.wall_run_counter matches ..72 if score @s pkmoves.move matches ..5 if entity @s[tag=!pkmoves.sprinting] run return run function pkmoves:wall_run/end_wallrun
+execute if score @s pkmoves.wall_run_counter matches 0 run return run function pkmoves:wall_run/end_wallrun
 execute if score @s pkmoves.wall_run_counter matches 0 run tag @s add pkmoves.wall_run_cool_down
-execute if score terminate_wallrun pkmoves.global matches 1 run return fail
-execute if entity @s[tag=pkmoves.sneaking] run function pkmoves:wall_run/end_wallrun
+execute if entity @s[tag=pkmoves.sneaking] run return run function pkmoves:wall_run/end_wallrun
 execute if entity @s[tag=pkmoves.sneaking] run tag @s add pkmoves.wall_run_cool_down
-execute if entity @s[tag=!pkmoves.is_in_air] run function pkmoves:wall_run/end_wallrun
-execute unless block ~ ~-0.3 ~ #pkmoves:not_solid run function pkmoves:wall_run/end_wallrun
-execute if score terminate_wallrun pkmoves.global matches 1 run return fail
+execute if entity @s[tag=!pkmoves.is_in_air] run return run function pkmoves:wall_run/end_wallrun
+execute unless block ~ ~-0.3 ~ #pkmoves:not_solid run return run function pkmoves:wall_run/end_wallrun
+
+
 execute store result score vmt pkmoves.global run data get entity @s Motion[1] 100
 scoreboard players remove @s pkmoves.stamina 5
 
