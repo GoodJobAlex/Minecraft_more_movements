@@ -7,9 +7,10 @@ execute as @a[tag=pkmoves.is_in_air] unless predicate pkmoves:in_air run functio
 
 #kill wall run platforms
 execute as @a if score @s pkmoves.sliding_cd matches 33 at @s as @e[tag=pkmoves.slide_hitbox,type=item_display] if score @s pkmoves.id = @p pkmoves.id run function pkmoves:sliding/remove_shulker
-execute as @a if score @s pkmoves.sliding_cd matches 37.. if score @s pkmoves.jump matches 1.. at @s as @e[tag=pkmoves.slide_hitbox,type=item_display] if score @s pkmoves.id = @p pkmoves.id run function pkmoves:sliding/remove_shulker
-execute as @a if score @s pkmoves.sliding_cd matches 37.. if score @s pkmoves.jump matches 1.. run scoreboard players set launch_power motion_library.variables 700
-execute as @a if score @s pkmoves.sliding_cd matches 37.. if score @s pkmoves.jump matches 1.. at @s rotated ~ 0 run function manipulation:api/launch_facing
+execute as @a if score @s pkmoves.sliding_cd matches 38 run attribute @s generic.jump_strength modifier remove pkmoves.jump_disable
+execute as @a if score @s pkmoves.sliding_cd matches 34.. if score @s pkmoves.jump matches 1.. at @s as @e[tag=pkmoves.slide_hitbox,type=item_display] if score @s pkmoves.id = @p pkmoves.id run function pkmoves:sliding/remove_shulker
+execute as @a if score @s pkmoves.sliding_cd matches 30.. if score @s pkmoves.jump matches 1.. run scoreboard players set launch_power motion_library.variables 700
+execute as @a if score @s pkmoves.sliding_cd matches 30.. if score @s pkmoves.jump matches 1.. at @s rotated ~ 0 run function manipulation:api/launch_facing
 
 execute as @a if score @s pkmoves.sliding_cd matches 32 run attribute @s generic.step_height modifier remove pkmoves.sliding
 execute as @a if score @s pkmoves.sliding_cd matches 36 run attribute @s generic.movement_speed modifier remove pkmoves.slide

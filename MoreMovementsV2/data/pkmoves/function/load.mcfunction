@@ -20,7 +20,7 @@ scoreboard objectives add pkmoves.vault_cd dummy
 
 #others
 scoreboard players set launch_strength motion_library.variables 5
-scoreboard players set sound_freq pkmoves.global 4
-scoreboard players set upthrust_multipliyer pkmoves.global 7
+scoreboard players set sound_freq pkmoves.global 5
+scoreboard players set upthrust_multipliyer pkmoves.global 8
 
 say hi

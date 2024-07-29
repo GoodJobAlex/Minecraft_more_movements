@@ -10,11 +10,12 @@ tag @e[tag=pkmoves.init,type=item_display] remove pkmoves.init
 attribute @s generic.step_height modifier add pkmoves.slide -0.7 add_value
 attribute @s generic.movement_speed modifier add pkmoves.slide 0.13 add_value
 attribute @s generic.jump_strength modifier add pkmoves.slide 0.08 add_value
+attribute @s generic.jump_strength modifier add pkmoves.jump_disable -1 add_multiplied_total
 
 
 
 attribute @s minecraft:generic.attack_speed modifier add pkmoves.animation -1 add_multiplied_total
-scoreboard players set @s pkmoves.animation_count_down 7
+scoreboard players set @s pkmoves.animation_count_down 8
 
 
 

@@ -14,7 +14,7 @@ execute if score terminate_wallrun pkmoves.global matches 1 run return fail
 execute store result score vmt pkmoves.global run data get entity @s Motion[1] 100
 scoreboard players remove @s pkmoves.stamina 5
 
-execute if score @s pkmoves.wall_run_counter matches 72 run attribute @s minecraft:generic.gravity modifier add pkmoves.wall_run -0.3 add_multiplied_total
+execute if score @s pkmoves.wall_run_counter matches 75 run attribute @s minecraft:generic.gravity modifier add pkmoves.wall_run -0.3 add_multiplied_total
 scoreboard players remove @s pkmoves.wall_run_counter 1
 
 #test for walls
