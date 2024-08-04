@@ -1,7 +1,7 @@
 execute at @s unless block ~ ~-1.2 ~ #pkmoves:not_solid run return fail
 
-execute rotated ~ 0 positioned ^ ^ ^0.8 unless block ~ ~ ~ #pkmoves:not_wall run return fail
-execute rotated ~-180 0 positioned ^ ^ ^0.8 unless block ~ ~ ~ #pkmoves:not_wall run return fail
+execute rotated ~ 0 positioned ^ ^ ^0.6 unless block ~ ~ ~ #pkmoves:not_wall run return fail
+execute rotated ~-180 0 positioned ^ ^ ^0.6 unless block ~ ~ ~ #pkmoves:not_wall run return fail
 
 
 execute rotated ~-90 0 positioned ^ ^ ^0.6 unless block ~ ~ ~ #pkmoves:not_wall rotated ~90 0 positioned ^ ^ ^1 unless block ~ ~ ~ #pkmoves:not_wall run return run function pkmoves:wall_run/positive_screentilt

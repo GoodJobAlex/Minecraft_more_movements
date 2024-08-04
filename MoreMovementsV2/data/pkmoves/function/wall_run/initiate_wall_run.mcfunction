@@ -3,7 +3,7 @@ execute store result score vmt pkmoves.global run data get entity @s Motion[1] 1
 execute if score vmt pkmoves.global matches ..-15 run scoreboard players operation launch_power motion_library.variables = vmt pkmoves.global
 execute if score vmt pkmoves.global matches ..-15 run scoreboard players operation launch_power motion_library.variables *= upthrust_multipliyer pkmoves.global
 
-execute if score vmt pkmoves.global matches ..-15 at @s rotated 0 0 run function manipulation:api/launch_facing
+execute if score vmt pkmoves.global matches ..-15 at @s rotated ~ -25 run function manipulation:api/launch_facing
 
 execute unless entity @s[tag=pkmoves.wall_run] run return 0
 scoreboard players set @s pkmoves.wall_run_counter 80

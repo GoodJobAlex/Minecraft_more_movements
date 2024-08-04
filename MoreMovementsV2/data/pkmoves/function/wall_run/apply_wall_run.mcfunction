@@ -14,6 +14,8 @@ execute unless block ~ ~-0.3 ~ #pkmoves:not_solid run return run function pkmove
 execute store result score vmt pkmoves.global run data get entity @s Motion[1] 100
 scoreboard players remove @s pkmoves.stamina 5
 
+
+
 execute if score @s pkmoves.wall_run_counter matches 75 run attribute @s minecraft:generic.gravity modifier add pkmoves.wall_run -0.3 add_multiplied_total
 scoreboard players remove @s pkmoves.wall_run_counter 1
 

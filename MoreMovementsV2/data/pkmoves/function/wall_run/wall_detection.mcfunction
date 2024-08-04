@@ -1,9 +1,10 @@
 tag @s add pkmoves.unsummoned
-
-execute if entity @s[tag=pkmoves.unsummoned] rotated ~-90 0 unless block ^ ^ ^0.5 #pkmoves:not_wall run function pkmoves:wall_run/init_platform
-execute if entity @s[tag=pkmoves.unsummoned] rotated ~90 0 unless block ^ ^ ^0.5 #pkmoves:not_wall run function pkmoves:wall_run/init_platform
-execute if entity @s[tag=pkmoves.unsummoned] rotated ~ 0 unless block ^ ^ ^0.5 #pkmoves:not_wall run function pkmoves:wall_run/init_platform
-execute if entity @s[tag=pkmoves.unsummoned] rotated ~-180 0 unless block ^ ^ ^0.5 #pkmoves:not_wall run function pkmoves:wall_run/init_platform
+scoreboard players set launch_power motion_library.variables 25
+execute rotated ~ 0 run function manipulation:api/launch_facing
+execute if entity @s[tag=pkmoves.unsummoned] rotated ~-90 0 unless block ^ ^ ^0.6 #pkmoves:not_wall run function pkmoves:wall_run/init_platform
+execute if entity @s[tag=pkmoves.unsummoned] rotated ~90 0 unless block ^ ^ ^0.6 #pkmoves:not_wall run function pkmoves:wall_run/init_platform
+execute if entity @s[tag=pkmoves.unsummoned] anchored eyes rotated ~ 0 unless block ^ ^ ^0.6 #pkmoves:not_wall run function pkmoves:wall_run/init_platform
+execute if entity @s[tag=pkmoves.unsummoned] anchored eyes rotated ~-180 0 unless block ^ ^ ^0.6 #pkmoves:not_wall run function pkmoves:wall_run/init_platform
 
 
 
